@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+ 
+$color-background:#FFFF;
+$color-underline:(#C4C4C4, 25%);
+$color-text:#FFA786;
+$color-subtext:#C4C4C4;
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url("https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css");
+@import '~line-awesome/css/line-awesome.css';
+
+.maintext{
+    font-family: 'PT Sans';
+    font-weight: bold;
+    font-style: normal;
+    font-size: 26px;
+    color : #FFA786;
+    line-height: 33px;
+}
+
+.subtext{
+    font-family: 'PT Sans';
+    font-style: regular;
+    font-size: 20px;
+    color : #C4C4C4;
+    text-align: center;
+    line-height: 26px;
+
+}
+
+.buttontext{
+    font-family: 'PT Sans';
+    font-weight: bold;
+    font-size: 14px;
+    color : #FFFFFF;
+}
+.button{
+    border-radius: 29px;
+    background-image: linear-gradient(to right, #FFDE86 0%, #FF5A1C 100%);
+    width: 191.57px;
+    height: 45px;
+    border: none;
+    display: inline-block;
+    font-family: 'PT Sans';
+    font-weight: bold;
+    font-size: 14px;
+    color : #FFFFFF;
+    text-align: left;
+    line-height: 19px;
+}
+
+.cake{  
+    color:(#FFA786,9%);
+    height: 163px;
+    width: 153px;
+}
+
+.text-danger{
+    color: rgba(255, 166, 134, 0.09);
+    opacity: 9%;
+    font-size: 153px;
+}
+
+.text-danger1{
+        color: #FFFFFF;
+        font-size: 26px;
+}
+    
