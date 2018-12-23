@@ -16,7 +16,7 @@ $color-subtext:#C4C4C4;
 
     font-family: 'PT Sans';
     font-weight: bold;
-    font-style: normal;
+    font-style: regular;
     font-size: 26px;
     color : #FFA786;
     line-height: 33px;
@@ -38,6 +38,9 @@ $color-subtext:#C4C4C4;
     font-weight: bold;
     font-size: 14px;
     color : #FFFFFF;
+    vertical-align : center center;
+    height: 26px;
+    line-height: 19px;
 }
 .button{
     margin-top: 149px;
@@ -47,14 +50,14 @@ $color-subtext:#C4C4C4;
     height: 45px;
     border: none;
     display: inline-block;
+    color : #FFFFFF;
+    filter: drop-shadow(0 3px 20px rgba(181, 69, 0, 0.39));
+
     font-family: 'PT Sans';
     font-weight: bold;
     font-size: 14px;
     color : #FFFFFF;
-    text-align: left;
-    line-height: 19px;
-
-    filter: drop-shadow(0 3px 20px rgba(181, 69, 0, 0.39));
+    vertical-align : center center;
 }
 
 .cake{  
@@ -74,3 +77,15 @@ $color-subtext:#C4C4C4;
         font-size: 26px;
 }
     
+
+.lists{
+    width: 600px;
+    height: 150px;
+    max-width: 50%;
+    max-height: 200px
+}
+.image{
+   font-size: 160px;
+    border: 3px;
+    border-color: #EBEBEB;
+}

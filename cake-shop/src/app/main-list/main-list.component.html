@@ -9,34 +9,41 @@
     Aby dodać pierwsze ciasto, kliknij <br> 
     w poniższy przycisk:
 </p>
-<button class="button">
-    <i class="la la-plus la-2x" style="margin-left: 14px">
-        
-    </i>
-      <label  style="margin-left: 16px;" class='buttontext'>
-             DODAJ CIASTO
-         </label> 
-</button>
+
 </div>
 
 <div *ngIf="!listIsEmpty">
-    <li *ngFor="let cake of cakeList"> 
-            {{cake.name}}
-            {{cake.description}}
-            {{cake.price}} 
-    </li>
-    <mat-card class="example-card">
-            
-    <mat-card-header>
-     <mat-card-title>MR. X</mat-card-title>
-                <mat-card-subtitle>Dog Breed</mat-card-subtitle>   
-    </mat-card-header>
-    <mat-card-content>
-        ABC
-    </mat-card-content>
-                
-           
-        </mat-card>
 
+    <mat-list>
+        <mat-list-item class="lists" *ngFor="let cake of cakeList" >
+            <img matListAvatar src="assets/imgs/CakeShop.png" class="image" >
+            <h3 matLine class="subtext"> 
+                {{cake.name}} 
+            
+            </h3>
+            <p matLine >
+                <span class="subtext"> {{cake.description}} </span>
+                <span class="subtext"> -- {{cake.price}} </span>
+            </p>
+            <p matLine >
+                    <span class="subtext"> {{cake.description}} </span>
+                    <span class="subtext"> -- {{cake.price}} </span>
+                </p>
+                <p matLine >
+                        <span class="subtext"> {{cake.description}} </span>
+                        <span class="subtext"> -- {{cake.price}} </span>
+                    </p>
+                    <p matLine >
+                <span class="subtext"> {{cake.description}} </span>
+                <span class="subtext"> -- {{cake.price}} </span>
+            </p>
+        </mat-list-item>
+    </mat-list>
 </div>
+<button class="button" (click) = 'add()'>
+    <i class="la la-plus la-2x" style="margin-left: 14px; margin-right: 16px"></i>
+   
+        DODAJ CIASTO
+                 
+    </button>
 </body>
