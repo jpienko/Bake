@@ -1,3 +1,35 @@
-<p>
-    hi
-</p>
+
+<body align="center" style="background-color: white; width: 631px;height: 664px;">
+    <form [formGroup]="cake" (ngSubmit) = "save()">
+        <img [src]="cakePic" class="images"  style=" border-radius:50%;width: 180px;height: 180px; border:3px solid #EBEBEB;">  
+        
+        <p> 
+            <input placeholder="Nazwa ciasta" type="text" class="counter">
+        </p>
+        <p>
+            <input  #input maxlength="250" placeholder="Opis ciasta" type="text" class="counter">
+            <mat-hint align="end">{{input.value?.length || 0}}/250</mat-hint>
+        </p>
+        <label>
+            LICZBA PORCJI
+        </label>
+        <p matLine>
+                <button>4</button>
+                <button>8</button>
+                <button>12</button>
+        </p>
+
+        <mat-grid-list cols="2" rowHeight="50px">
+                <mat-grid-tile>CENA CIASTA</mat-grid-tile>
+                <mat-grid-tile>CENA PORCJI</mat-grid-tile>
+                <mat-grid-tile><input placeholder="0 PLN" type="number"></mat-grid-tile>
+                <mat-grid-tile>{{piecePr}}</mat-grid-tile>
+              </mat-grid-list>
+
+    
+        <button  type="submit">ZAPISZ</button>
+    </form>
+
+
+
+</body>

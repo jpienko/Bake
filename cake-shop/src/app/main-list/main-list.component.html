@@ -1,49 +1,62 @@
-<body align="center">
-<div *ngIf="listIsEmpty">
-  <i class="la la-birthday-cake la-4x text-danger"></i>
-  <p class="maintext">
-      Nie masz żadnych ciast na liście
-  </p>
-
-  <p class="subtext">
-    Aby dodać pierwsze ciasto, kliknij <br> 
-    w poniższy przycisk:
-</p>
-
-</div>
-
-<div *ngIf="!listIsEmpty">
-
-    <mat-list>
-        <mat-list-item class="lists" *ngFor="let cake of cakeList" >
-            <img matListAvatar src="assets/imgs/CakeShop.png" class="image" >
-            <h3 matLine class="subtext"> 
-                {{cake.name}} 
-            
-            </h3>
-            <p matLine >
-                <span class="subtext"> {{cake.description}} </span>
-                <span class="subtext"> -- {{cake.price}} </span>
-            </p>
-            <p matLine >
-                    <span class="subtext"> {{cake.description}} </span>
-                    <span class="subtext"> -- {{cake.price}} </span>
-                </p>
-                <p matLine >
-                        <span class="subtext"> {{cake.description}} </span>
-                        <span class="subtext"> -- {{cake.price}} </span>
+<body align="center" style="height: 192px; width: 1398px;">
+        <div *ngIf="listIsEmpty">
+          <i class="la la-birthday-cake la-4x text-danger"></i>
+          <p class="maintext">
+              Nie masz żadnych ciast na liście
+          </p>
+        
+          <p class="subtext">
+            Aby dodać pierwsze ciasto, kliknij <br> 
+            w poniższy przycisk:
+        </p>
+        
+        </div>
+        
+        <div *ngIf="!listIsEmpty">
+        
+            <mat-list class="center" style="width: 100%;">
+                <mat-list-item *ngFor="let cake of cakeList" style="width: 632px;height: 197.47px;">
+                    <img matListAvatar src="assets/imgs/CakeShop.png" class="image"  style="min-width: 160px;min-height: 160px; border:3px solid #EBEBEB;">
+                    
+                    <div style="height: 133px;width: 403px;margin-left: 31px">
+                    <p matLine  class="title" style="width: 100%;"> 
+                        {{cake.name}} 
+                        <i class="la la-pencil" style="position: absolute; right: 53px;"></i>
+                        <i class="la la-times-circle" style="position: absolute; right: 13px;"></i>
+        
                     </p>
-                    <p matLine >
-                <span class="subtext"> {{cake.description}} </span>
-                <span class="subtext"> -- {{cake.price}} </span>
-            </p>
-        </mat-list-item>
-    </mat-list>
-</div>
-<button class="button" (click) = 'add()'>
-    <i class="la la-plus la-2x" style="margin-left: 14px; margin-right: 16px"></i>
-   
-        DODAJ CIASTO
-                 
-    </button>
+                    <p class="descript" style="width: 100%">
+                        {{cake.description}} 
+                    </p>
+        
+                    <p matLine style="width: 100%; text-align: left;"> 
+                        <label class="pricepiece">
+                            LICZBA PORCJI
+                        </label>
+                        <label class="nums">
+                            {{cake.pieces}}  
+                        </label>
+                       
+                       <label style="border: 1px solid rgba(196, 196, 196, 0.25); height: 15px; position: absolute; right: 295px;" ></label>
+
+                        <label class="pricepiece" style="margin-left: 55px">
+                            CENA CIASTA
+                        </label>
+                        <label class="nums">
+                            {{cake.price}}PLN
+                        </label>   
+                    </p>
+                </div>
+                </mat-list-item>
+            </mat-list>
+        </div>
+        <div class="backbut">
+           <button class="button" (click) = 'add()' style="position: absolute;
+           bottom: 26px;
+           right: 40%;">
+                <i class="la la-plus la-2x" style="margin-left: 14px; margin-right: 16px"></i>
+                <label> DODAJ CIASTO</label> 
+            </button> 
+        </div>
 </body>
+        

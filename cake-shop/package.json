@@ -26,6 +26,7 @@
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
     "line-awesome": "github:icons8/line-awesome",
+    "ng4-input-counter": "^0.1.4",
     "ngx-webstorage-service": "^3.1.3",
     "npm-font-open-sans": "^1.1.0",
     "rxjs": "~6.3.3",
