@@ -1,13 +1,3 @@
-.example-card {
-    max-width: 300px;
-    margin: 4px
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
-
   .matListAvatar{
       width: 160px;
       height: 160px;
@@ -29,6 +19,7 @@
     font-size: 16px;
     color : #C4C4C4;
     text-align: left;
+    white-space: pre-line;
   }
 
   .pricepiece{
@@ -48,14 +39,33 @@
     text-align: left;
   }
 
-
-  .center {
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    width: 100%;
-  }
-
   .backbut{
     background-image: linear-gradient(to bottom, #ffffff00 0%, #ffffff 100%);
   }
+
+  .toast{
+    border-radius: 6px;
+    background-color: #ffffff;
+    width: 327px;
+    height: 61px;
+    filter: drop-shadow(0 3px 30px rgba(103, 42, 42, 0.19));
+
+    font-family: 'PT Sans';
+    font-size: 16px;
+    text-align: center;
+    color :rgba(255, 167, 134, 1);
+
+    position: absolute;
+    right: 18px;
+    top: 180px;
+
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .text-danger{
+    color: rgba(255, 166, 134, 0.09);
+    opacity: 9%;
+    font-size: 153px;
+    margin-top: 78px;
+}

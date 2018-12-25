@@ -1,29 +1,26 @@
-<body align="center" style="height: 192px; width: 1398px;">
-        <div *ngIf="listIsEmpty">
-          <i class="la la-birthday-cake la-4x text-danger"></i>
-          <p class="maintext">
-              Nie masz żadnych ciast na liście
-          </p>
-        
-          <p class="subtext">
-            Aby dodać pierwsze ciasto, kliknij <br> 
-            w poniższy przycisk:
+<body align="center" style="height: 766px;">
+    <div *ngIf="listIsEmpty">
+        <i class="la la-birthday-cake la-4x text-danger"></i>
+        <p class="maintext">
+            Nie masz żadnych ciast na liście
         </p>
         
-        </div>
+        <p class="subtext">
+            Aby dodać pierwsze ciasto, kliknij <br> 
+            w poniższy przycisk:
+        </p> 
+    </div>
         
-        <div *ngIf="!listIsEmpty">
-        
-            <mat-list class="center" style="width: 100%;">
-                <mat-list-item *ngFor="let cake of cakeList" style="width: 632px;height: 197.47px;">
-                    <img matListAvatar src="assets/imgs/CakeShop.png" class="image"  style="min-width: 160px;min-height: 160px; border:3px solid #EBEBEB;">
+    <div *ngIf="!listIsEmpty" style="width: 100%;" align="center">
+        <mat-list style="width: 632px;">
+            <mat-list-item *ngFor="let cake of cakeList" style="height: 197.47px;">
+                <img matListAvatar [src]="cake.pic" class="image"  style="width: 160px;height: 160px; border:3px solid #EBEBEB;">
                     
-                    <div style="height: 133px;width: 403px;margin-left: 31px">
+                <div style="height: 133px;width: 403px;margin-left: 31px">
                     <p matLine  class="title" style="width: 100%;"> 
                         {{cake.name}} 
-                        <i class="la la-pencil" style="position: absolute; right: 53px;"></i>
-                        <i class="la la-times-circle" style="position: absolute; right: 13px;"></i>
-        
+                        <i class="la la-pencil" style="position: absolute; right: 53px;" (click)= "edit(cake)"></i>
+                        <i class="la la-times-circle" style="position: absolute; right: 13px;"(click) = "delete(cake)"></i>
                     </p>
                     <p class="descript" style="width: 100%">
                         {{cake.description}} 
@@ -47,16 +44,23 @@
                         </label>   
                     </p>
                 </div>
-                </mat-list-item>
-            </mat-list>
-        </div>
-        <div class="backbut">
-           <button class="button" (click) = 'add()' style="position: absolute;
-           bottom: 26px;
-           right: 40%;">
-                <i class="la la-plus la-2x" style="margin-left: 14px; margin-right: 16px"></i>
-                <label> DODAJ CIASTO</label> 
-            </button> 
-        </div>
+            </mat-list-item>
+        </mat-list>
+    </div>
+
+    <div align="center" class="backbut">
+        <button class="button" (click) = 'add()'>
+            <i class="la la-plus" style="margin-left: 14px; margin-right: 16px; font-size:26px;"></i>
+            <label class="buttontext" style="align-self: center">DODAJ CIASTO</label> 
+        </button> 
+    </div>
+
+    <div class="toast"  *ngIf="showloader">
+    
+           <i class="la la-check" style="font-size: 36px; align-self: center;margin-left: 23px "></i>
+            <label style="align-self: center; margin-left: 19px">{{toastText}} </label> 
+    
+       
+    </div>
 </body>
         

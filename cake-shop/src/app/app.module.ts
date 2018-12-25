@@ -9,13 +9,17 @@ import { FormsModule, ReactiveFormsModule } from '../../node_modules/@angular/fo
 import { AddCakeComponent } from './add-cake/add-cake.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputCounterModule } from 'ng4-input-counter';
+import { StorageServiceModule } from 'ngx-webstorage-service';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MainListComponent,
-    AddCakeComponent
+    AddCakeComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,
@@ -32,12 +36,14 @@ import { InputCounterModule } from 'ng4-input-counter';
     BrowserAnimationsModule,
     MatInputModule,
     InputCounterModule.forRoot(),
-    MatGridListModule
+    MatGridListModule,
+    StorageServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
     AddCakeComponent,
+    ConfirmationComponent
 ],
 })
 export class AppModule { }

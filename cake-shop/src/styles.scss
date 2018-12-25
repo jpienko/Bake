@@ -12,7 +12,7 @@ $color-subtext:#C4C4C4;
 @import '~line-awesome/css/line-awesome.css';
 
 .maintext{
-    margin-top: 99px;
+    margin-top: 26px;
 
     font-family: 'PT Sans';
     font-weight: bold;
@@ -24,26 +24,23 @@ $color-subtext:#C4C4C4;
 
 .subtext{
   
-    font-family: 'PT Sans';
+    font-family: 'PT Sans',sans-serif;
     font-style: regular;
     font-size: 20px;
     color : #C4C4C4;
     text-align: center;
-    line-height: 26px;
+    margin-top: 26px;
+    height: 51px;
 
 }
 
 .buttontext{
-    font-family: 'PT Sans';
+    font-family: 'PT Sans',sans-serif;
     font-weight: bold;
     font-size: 14px;
     color : #FFFFFF;
-    vertical-align : center center;
-    height: 26px;
-    line-height: 19px;
 }
 .button{
-    margin-top: 149px;
     border-radius: 29px;
     background-image: linear-gradient(to right, #FFDE86 0%, #FF5A1C 100%);
     width: 191.57px;
@@ -52,38 +49,18 @@ $color-subtext:#C4C4C4;
     display: inline-block;
     color : #FFFFFF;
     filter: drop-shadow(0 3px 20px rgba(181, 69, 0, 0.39));
-
-    font-family: 'PT Sans';
-    font-weight: bold;
-    font-size: 14px;
-    color : #FFFFFF;
-    vertical-align : center center;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    top: 22px;
 }
 
 .cake{  
     color:(#FFA786,9%);
     height: 163px;
     width: 153px;
-}
+}    
 
-.text-danger{
-    color: rgba(255, 166, 134, 0.09);
-    opacity: 9%;
-    font-size: 153px;
-}
-
-.text-danger1{
-        color: #FFFFFF;
-        font-size: 26px;
-}
-    
-
-.lists{
-    width: 600px;
-    height: 150px;
-    max-width: 50%;
-    max-height: 200px
-}
 .image{
    font-size: 160px;
     border: 3px;
