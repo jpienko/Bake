@@ -1,0 +1,51 @@
+
+<body align="center" style="background-color: white; width: 631px;height: 664px;" >
+    <form [formGroup]="cake" >
+      
+        <div id="upload_button">
+                <label class="addpic">
+                        <input type='file' #inputPic (change)="onSelectFile($event)">
+                        <i class="la la-pencil" *ngIf="!addPic" style="font-size: 18px; align-self: center; padding: 7px"></i>
+                        <i class="la la-plus" *ngIf="addPic" style="font-size: 18px; align-self: center; padding: 7px"></i>
+                </label>
+              </div>
+       
+        <div>
+            <img [src]="model.pic" *ngIf="!addPic"  style=" border-radius:50%;width: 180px;height: 180px; border:3px solid #EBEBEB;">  
+            <i class="la la-birthday-cake" *ngIf="addPic" style=" border-radius:50%; color:#EBEBEB;max-width: 180px;max-height: 180px; border:3px solid #EBEBEB; font-size: 60px; padding: 50px; "></i>
+        </div>
+        
+        <p> 
+            <input placeholder="Nazwa ciasta" formControlName="name" [(ngModel)]="model.name" type="text" class="name">
+        </p>
+        <p>
+            <textarea  class="des" #input maxlength="250" placeholder="Opis ciasta" formControlName="description" [(ngModel)]="model.description" type="text" ></textarea>
+            <mat-hint class="count" ><br>{{input.value?.length || 0}}/250</mat-hint>
+        </p>
+        <label class="texts">
+            LICZBA PORCJI
+        </label>
+        <p matLine>
+                <button [ngClass]="{'robut' : model.pieces != 4, 'robutchosen' : model.pieces == 4}" (click)="portions(4)">4</button>
+                <button [ngClass]="{'robut' : model.pieces != 8, 'robutchosen' : model.pieces == 8}" (click)="portions(8)">8</button>
+                <button [ngClass]="{'robut' : model.pieces != 12, 'robutchosen' : model.pieces == 12}" (click)="portions(12)">12</button>
+        </p>
+
+        <mat-grid-list cols="2" rowHeight="30px" style="width: 150px" >
+                <mat-grid-tile style="margin-left: 213px" class="texts">CENA CIASTA</mat-grid-tile>
+                <mat-grid-tile style="margin-left: 250px" class="texts">CENA PORCJI</mat-grid-tile>
+                <mat-grid-tile style="margin-left: 213px">
+                    <input class="prices" placeholder="0 PLN"  (ngModelChange)="countPieceValue($event)" [(ngModel)]="model.price" formControlName="price" type="number">
+                </mat-grid-tile>
+                <mat-grid-tile class="piecePr" style="margin-left: 250px">
+                    <label>{{model.piecePrice| number: '1.0-2' }} PLN</label>
+                </mat-grid-tile>
+              </mat-grid-list>
+
+    
+        <button (click)= "save()" class="savebut">ZAPISZ</button>
+    </form>
+
+
+
+</body>

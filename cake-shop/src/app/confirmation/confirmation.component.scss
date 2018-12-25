@@ -1,0 +1,44 @@
+.main{
+    margin-top: 26px;
+
+    font-family: 'PT Sans';
+    font-weight: bold;
+    font-size: 26px;
+    color : #FFA786;
+    line-height: 33px;
+}
+
+.sub{
+  
+    font-family: 'PT Sans',sans-serif;
+    font-size: 20px;
+    color : #C4C4C4;
+    margin-top: 26px;
+    height: 51px;
+
+}
+
+.condele{
+    border-radius: 9px;
+    background-color: #FFA786;
+    border: none;
+    font-family: 'PT Sans',sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color : #FFFFFF;
+    padding: 15px;
+    
+}
+
+.cancel{
+    border-radius: 9px;
+    background-color: #C4C4C4;
+    border: none;
+    color : #FFFFFF;
+    font-family: 'PT Sans',sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color : #FFFFFF;
+    padding: 15px;
+    margin-right: 10px
+}
