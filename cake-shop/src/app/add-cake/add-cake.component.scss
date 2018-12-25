@@ -114,6 +114,9 @@ input[type="file"] {
 .prices:focus{
     border-bottom: 1px solid #FFA786;
 }
+.ms::after {
+    content: 'PLN';
+  }
 
 .piecePr{
     font-family: 'PT Sans', sans-serif;
@@ -137,9 +140,7 @@ input[type="file"] {
     font-weight: bold;
     font-size: 14px;
     letter-spacing: 80;
-    margin-top: 74px;
-    position: relative;
-    bottom: 15px;
+    margin-top: 15px;
 
 }
 
@@ -158,4 +159,10 @@ input[type="file"] {
     display: flex;
     align-items: flex-start;
     
+}
+
+.divide{
+    width: 632px;
+    position: relative;
+    top:45px;
 }
