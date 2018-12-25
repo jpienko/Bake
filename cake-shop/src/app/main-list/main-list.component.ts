@@ -24,12 +24,15 @@ export class MainListComponent implements OnInit {
   private subscription: Subscription;
   private timer: Observable<any>;
 
-  constructor(protected localStorage: LocalStorage,private dialog: MatDialog) { }
+  constructor(protected localStorage: LocalStorage,private dialog: MatDialog) { 
 
+  }
 
   ngOnInit() {
-    this.getStorage();    
-      }
+    if (!this.hasOwnProperty(STORAGE_KEY)) {
+      this.getStorage();
+    }      
+  }
 
   protected add(): void {
     const dialogRef = this.dialog.open(AddCakeComponent, {});
@@ -38,7 +41,9 @@ export class MainListComponent implements OnInit {
         if(data!=undefined){
           this.cakeList.push(data.model);
           this.toastText = "DODAŁEŚ NOWE CIASTO!";
-          this.storage();        
+          if (!this.hasOwnProperty(STORAGE_KEY)) {
+            this.storage();
+          }        
           this.setTimer();
         } 
       }
@@ -52,7 +57,9 @@ protected edit(cake:Cakes){
       data => { 
         if(data!=undefined){
           this.cakeList[index] = data.model;
-          this.storage();
+          if (!this.hasOwnProperty(STORAGE_KEY)) {
+            this.storage();
+          }  
         } 
       }
     );   
@@ -62,29 +69,30 @@ protected edit(cake:Cakes){
     const dialogRef1 = this.dialog.open(ConfirmationComponent, { data: cake.name});
     dialogRef1.afterClosed().subscribe(
       data => { 
-        if(data=='true'){
-          let index = this.cakeList.findIndex(x=> x==cake)
-    this.cakeList.splice(index,1);
-    this.storage();
-    this.toastText = "USUNĄŁEŚ CIASTO!";
-    this.setTimer();
+        if(data.delete=='true'){
+          let index = this.cakeList.findIndex(x=> x==cake);
+          this.cakeList.splice(index,1);
+          if (!this.hasOwnProperty(STORAGE_KEY)) {
+            this.storage();
+          }  
+          this.toastText = "USUNĄŁEŚ CIASTO!";
+          this.setTimer();
         } 
       }
     );   
-    
   }
 
   public ngOnDestroy() {
-    if ( this.subscription && this.subscription instanceof Subscription) {
+    if ( this.subscription && this.subscription instanceof Subscription){
       this.subscription.unsubscribe();
     }
   }
 
   public setTimer(){
-    this.showloader   = true;
+    this.showloader = true;
     this.timer = timer(5000);
     this.subscription = this.timer.subscribe(() => {
-        this.showloader = false;
+      this.showloader = false;
     });
   }
 
@@ -92,18 +100,17 @@ protected edit(cake:Cakes){
     this.localStorage.setItem('cakes', this.cakeList).subscribe(() => {});
   }
 
-  private getStorage(){this.localStorage.getItem<Cakes[]>('cakes').subscribe((cakes:Cakes[]) => {
-   this.cakeList = cakes;  
-   if(this.cakeList.length<1){
-    this.listIsEmpty=true;
-  }  
-  });
-
+  private getStorage(){
+    this.localStorage.getItem<Cakes[]>('cakes').subscribe((cakes:Cakes[]) => {
+      this.cakeList = cakes;  
+      if(this.cakeList.length<1){
+        this.listIsEmpty=true;
+      }  
+    });
   }
 }
 
-export class Cakes{
-
+export class Cakes{ 
   public pic:string;
   public name:string;
   public description:string;

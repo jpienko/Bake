@@ -1,4 +1,4 @@
-<body align="center" style="height: 766px;">
+<body align="center">
     <div *ngIf="listIsEmpty">
         <i class="la la-birthday-cake la-4x text-danger"></i>
         <p class="maintext">
@@ -14,8 +14,8 @@
     <div *ngIf="!listIsEmpty" style="width: 100%;" align="center">
         <mat-list style="width: 632px;">
             <mat-list-item *ngFor="let cake of cakeList" style="height: 197.47px;">
-                <img matListAvatar [src]="cake.pic" class="image"  style="width: 160px;height: 160px; border:3px solid #EBEBEB;">
-                    
+                <img matListAvatar [src]="cake.pic" class="image"  style="width: 160px;height: 160px; 
+                                                                          border:3px solid #EBEBEB;">   
                 <div style="height: 133px;width: 403px;margin-left: 31px">
                     <p matLine  class="title" style="width: 100%;"> 
                         {{cake.name}} 
@@ -30,15 +30,18 @@
                         <label class="pricepiece">
                             LICZBA PORCJI
                         </label>
+
                         <label class="nums">
                             {{cake.pieces}}  
                         </label>
                        
-                       <label style="border: 1px solid rgba(196, 196, 196, 0.25); height: 15px; position: absolute; right: 295px;" ></label>
+                       <label style="border: 1px solid rgba(196, 196, 196, 0.25); height: 15px; position: absolute; 
+                                     right: 295px;" ></label>
 
                         <label class="pricepiece" style="margin-left: 55px">
                             CENA CIASTA
                         </label>
+
                         <label class="nums">
                             {{cake.price}}PLN
                         </label>   
@@ -56,11 +59,8 @@
     </div>
 
     <div class="toast"  *ngIf="showloader">
-    
-           <i class="la la-check" style="font-size: 36px; align-self: center;margin-left: 23px "></i>
+        <i class="la la-check" style="font-size: 36px; align-self: center;margin-left: 23px "></i>
             <label style="align-self: center; margin-left: 19px">{{toastText}} </label> 
-    
-       
     </div>
 </body>
         
